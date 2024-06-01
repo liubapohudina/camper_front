@@ -5,11 +5,12 @@ const instance = axios.create({
 });
 
 export const campersFetch = async (page = 1) => {
-    const response = await instance.get('/adverts', {
+    const {data} = await instance.get('/adverts', {
         params: {
             page,
             limit: 4,
         },
     });
-    return response.data;
+    console.log(data)
+    return data;
 };

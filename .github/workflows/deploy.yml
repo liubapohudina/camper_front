@@ -6,11 +6,11 @@ on:
     push:
         branches: ['main']
 
-# env:
-#     VITE_BACKEND_URL: ${{secrets.VITE_BACKEND_URL}}
+env:
+    VITE_BACKEND_URL: ${{secrets.VITE_BACKEND_URL}}
 
     # Allows you to run this workflow manually from the Actions tab
-    # workflow_dispatch:
+    workflow_dispatch:
 
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
