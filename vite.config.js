@@ -5,11 +5,11 @@ export default defineConfig({
     plugins: [react()],
     resolve: {
         alias: {
-            src: '/src',
-            components: '/src/components',
-            pages: '/src/pages',
-            assets: '/src/assets'
+            src: './src',
+            components: './src/components',
+            pages: './src/pages',
+            assets: './src/assets'
         },
     },
-    base: '/camper_front',
+    base: '/camper_front/',
 });

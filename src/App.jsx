@@ -6,7 +6,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 const Favorite = lazy(() => import('./pages/Favorite'));
 
-import Appbar from 'components/Appbar/Appbar';
+import Appbar from './components/Appbar/Appbar';
 
 function App() {
   return (
