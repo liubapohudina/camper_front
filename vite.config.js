@@ -8,10 +8,8 @@ export default defineConfig({
             src: '/src',
             components: '/src/components',
             pages: '/src/pages',
-            assets: '/src/assets',
-            api: '/src/api',
-            helpers: '/src/helpers',
+            assets: '/src/assets'
         },
     },
-    base: '/camper',
+    base: '/camper_front',
 });
