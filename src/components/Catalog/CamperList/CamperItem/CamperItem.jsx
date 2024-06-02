@@ -12,10 +12,10 @@ import {
   TextReview,
   LocationBox
 } from "./CamperItem.styled";
+import CategoriesItem from "./CategoriesItem";
 import icons from "../../../../assets/icons/symbol-defs.svg";
 
 const CamperItem = ({ camper }) => {
-  console.log(camper);
 
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -40,10 +40,10 @@ const CamperItem = ({ camper }) => {
             <Icon size={16} fill="#FFC531" stroke="#FFC531">
                 <use href={`${icons}#icon-star`}></use>
             </Icon>
-            <TextReview color="var(--main-text-color)">
+            <TextReview color="var(--main-text-color)" fontWeight="var(--regular)">
                 {camper.rating}
             </TextReview>
-            <TextReview>({camper.reviews.length} Reviews)</TextReview>
+            <TextReview fontWeight="var(--regular)">({camper.reviews.length} Reviews)</TextReview>
             </LocationBox>
             <LocationBox>
             <Icon size={16} fill="white" stroke="var(--main-text-color)">
@@ -55,6 +55,7 @@ const CamperItem = ({ camper }) => {
             </LocationBox>
         </RewieBox>
         <Description>{camper.description}</Description>
+        <CategoriesItem categories={camper}/>
       </div>
     </CamperItemWrapper>
   );
@@ -65,7 +66,7 @@ CamperItem.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
-    rating: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
     reviews: PropTypes.array.isRequired,
     location: PropTypes.string.isRequired,
   }).isRequired,

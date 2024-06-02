@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { mobileScrennForElements } from "../../medaiQuery";
+import { mobileScrennForElements, container } from "../../medaiQuery";
 
 export const NavMenu = styled(NavLink)`
 ${mobileScrennForElements`
@@ -16,7 +16,9 @@ text-decoration: none;
 `;
 
 export const HeaderW = styled.header`
-padding: 30px;
+padding-top: 30px;
+padding-bottom: 30px;
+${container}
 `;
 
 export const NavList = styled.nav`

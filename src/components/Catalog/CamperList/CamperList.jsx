@@ -14,11 +14,11 @@ const CamperList = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <ul>
       {campers.map((camper) => (
         <CamperItem key={camper._id} camper={camper} />
       ))}
-    </div>
+    </ul>
   );
 };
 

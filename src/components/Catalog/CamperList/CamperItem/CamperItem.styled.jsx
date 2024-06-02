@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CamperItemWrapper = styled.div`
+export const CamperItemWrapper = styled.li`
   border: 1px solid #ccc;
   padding: 24px;
   margin: 8px 0;
@@ -26,6 +26,7 @@ export const Description = styled.p`
   margin: 0;
   max-width: 525px;
   margin-top: 24px;
+  margin-bottom: 24px;
   color: var(--second-text-color);
 `;
 
@@ -70,7 +71,8 @@ display: flex
 export const TextReview = styled.p`
 color: ${props => props.color};
 font-size: 16px;
-font-weight: 400;
+font-weight: ${props => props.fontWeight};
+text-transform: capitalize;
 `;
 export const LocationBox = styled.div`
 display: flex;

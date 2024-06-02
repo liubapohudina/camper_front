@@ -22,4 +22,5 @@ padding-top: 20px;
 export const TextBox = styled.h1`
 font-size: 32px;
 font-weight: 600;
+margin-bottom: 24px;
 `;

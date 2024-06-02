@@ -11,6 +11,11 @@
   --second-text-color: #475467;
   --main-btn-bg-color: #E44848;
   --main-btn-bg-color-hover: #D84343;
+  --bg-categories: #F2F4F7;
+
+  --medium: 500;
+  --regular: 400;
+  --semi-bold: 600;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,7 +32,10 @@ body {
   background-color: var(--background-color);
 }
 
-
+ul {
+  list-style: none;
+  padding: 0;
+}
 
 button {
   border-radius: 8px;
