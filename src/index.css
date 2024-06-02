@@ -10,6 +10,7 @@
   --main-text-color: #101828;
   --second-text-color: #475467;
   --main-btn-bg-color: #E44848;
+  --main-btn-bg-color-hover: #D84343;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,10 +27,7 @@ body {
   background-color: var(--background-color);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 button {
   border-radius: 8px;
