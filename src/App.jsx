@@ -1,4 +1,3 @@
-import './App.css';
 import { lazy, Suspense } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
@@ -15,7 +14,7 @@ function App() {
         <Route path="/" element={<Appbar />}>
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
-          <Route path="favorites" element={<Favorite />} />
+          <Route path="favorite" element={<Favorite />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

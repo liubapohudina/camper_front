@@ -1,5 +1,9 @@
+import Hero from "../Hero/Hero";
+
 const HomePage = () => {
-    return <div>home</div>
+    return <section>
+        <Hero/>
+    </section>
 }
 
 export default HomePage;
