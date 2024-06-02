@@ -12,10 +12,12 @@ export const Btn = styled.button`
     border: none;
     cursor: pointer;
     border-radius: 200px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
 
     &:hover,
     &:focus {
         background-color: var(--main-btn-bg-color-hover);
+        transform: scale(1.1); 
     }
 
     &.a {
@@ -24,3 +26,4 @@ export const Btn = styled.button`
         cursor: pointer;
     }
 `;
+

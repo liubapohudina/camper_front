@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {campersFetch } from '../../services/apiCamper';
 
 export const getCampers = createAsyncThunk(
-    'products/products',
+    'campers/products',
     async (page, { rejectWithValue }) => {
         try {
             const data = await campersFetch(page);

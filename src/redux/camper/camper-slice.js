@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCampers } from './camper-operations';
 
 const campersSlice = createSlice({
-    name: 'products',
+    name: 'campers',
     initialState: {
         products: [],
         isLoadMore: false,
@@ -15,13 +15,13 @@ const campersSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(getCampers.fulfilled, (state, action) => {
-                state.products = action.payload?.length
-                    ? [...state.products, ...action.payload]
-                    : state.products;
+                state.products = action.payload; 
                 state.isLoadMore = action.payload.length === 4;
+                state.isLoading = false; 
             })
             .addCase(getCampers.rejected, (state, action) => {
                 state.error = action.payload;
+                state.isLoading = false; 
             }),
 });
 
