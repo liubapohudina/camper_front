@@ -20,11 +20,11 @@ export const Img = styled.img`
 `;
 
 export const Description = styled.p`
-  white-space: nowrap;
+  white-space: ${(props) => props.$wrap || "nowrap"};
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-  max-width: 525px;
+  max-width: ${(props) => props.$maxwidth || "525px"};
   margin-top: 24px;
   margin-bottom: 24px;
   color: var(--second-text-color);
@@ -74,6 +74,7 @@ export const TextReview = styled.p`
   font-size: 16px;
   font-weight: ${(props) => props.fontWeight};
   text-transform: capitalize;
+  border-bottom: ${(props) => props.$borderbottom || 'none'};
 `;
 export const LocationBox = styled.div`
   display: flex;

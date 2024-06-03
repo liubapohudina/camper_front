@@ -18,7 +18,7 @@ const CategoriesItem = ({ categories }) => {
       {categoryMappings.map(({ condition, icon, text }, index) => (
         condition && (
           <CategoriesElement key={index}>
-            <Icon size={20} fill="var(--main-text-color)" stroke="var(--main-text-color)">
+            <Icon size={20} fill="aliceblue" stroke="var(--main-text-color)">
               <use href={`${icons}#${icon}`} />
             </Icon>
             <TextReview fontWeight="var(--medium)">{text}</TextReview>

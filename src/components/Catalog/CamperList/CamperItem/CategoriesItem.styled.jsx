@@ -14,4 +14,5 @@ export const CategoriesList = styled.ul`
 display: flex;
 gap: 8px;
 flex-wrap: wrap;
+margin-bottom: 24px;
 `;

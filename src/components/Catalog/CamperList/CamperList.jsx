@@ -24,7 +24,7 @@ const CamperList = () => {
     <BoxList>
     <ul>
       {products.map((camper) => (
-        <CamperItem key={camper._id} camper={camper} />
+        <CamperItem key={camper._id} camper={camper} id={camper._id}/>
       ))}
     </ul>
     {isLoadMore && !isLoading && (
