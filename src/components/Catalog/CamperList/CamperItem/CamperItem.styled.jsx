@@ -31,50 +31,51 @@ export const Description = styled.p`
 `;
 
 export const Name = styled.h2`
-color: var(--main-text-color);
-font-size: 24px;
-font-weight: 600;
+  color: var(--main-text-color);
+  font-size: 24px;
+  font-weight: 600;
 `;
 
 export const Price = styled.p`
-color: var(--main-text-color);
-font-size: 24px;
-font-weight: 600;
+  color: var(--main-text-color);
+  font-size: 24px;
+  font-weight: 600;
 `;
 
 export const Icon = styled.svg`
-  width: ${props => props.size}px; 
-  height: ${props => props.size}px;
-  fill: ${props => props.fill};
-  stroke: ${props => props.stroke};
+  cursor: ${(props) => props.cursor || "none"};
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+  fill: ${(props) => props.fill};
+  stroke: ${(props) => props.stroke};
   margin-right: 4px;
 `;
 
 export const Wrap1 = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 `;
 
 export const Wrap2 = styled.div`
-display: flex;
-align-items: center;
-gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
 export const RewieBox = styled.div`
-padding-top: 8px;
-gap: 16px;
-display: flex
+  padding-top: 8px;
+  gap: 16px;
+  display: flex;
 `;
 
 export const TextReview = styled.p`
-color: ${props => props.color};
-font-size: 16px;
-font-weight: ${props => props.fontWeight};
-text-transform: capitalize;
+  color: ${(props) => props.color};
+  font-size: 16px;
+  font-weight: ${(props) => props.fontWeight};
+  text-transform: capitalize;
 `;
 export const LocationBox = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `;

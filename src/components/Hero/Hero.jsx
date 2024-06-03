@@ -5,7 +5,7 @@ const Hero = () => {
         <HeroBox>
             <InfoBox>
                 <TextBox>Get closer to nature and make your vacation comfortable</TextBox>
-                <MainBtn href='/camper_front/catalog' text='Our products'/>
+                <MainBtn href='/catalog' text='Our products'/>
             </InfoBox>
            
         </HeroBox>

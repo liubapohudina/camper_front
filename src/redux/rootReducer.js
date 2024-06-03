@@ -16,7 +16,7 @@ import camperSlice from './camper/camper-slice';
 
 const rootReducer = combineReducers({
     // favorite: persistedReducer,
-    products: camperSlice,
+    campers: camperSlice,
 });
 
 export default rootReducer;

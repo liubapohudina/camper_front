@@ -15,9 +15,14 @@ const campersSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(getCampers.fulfilled, (state, action) => {
-                state.products = action.payload; 
+                const currentPage = action.meta.arg;
+                if (currentPage === 1) {
+                    state.products = action.payload;
+                } else {
+                    state.products = [...state.products, ...action.payload];
+                }
                 state.isLoadMore = action.payload.length === 4;
-                state.isLoading = false; 
+                state.isLoading = false;
             })
             .addCase(getCampers.rejected, (state, action) => {
                 state.error = action.payload;

@@ -30,7 +30,7 @@ const CamperItem = ({ camper }) => {
           <Name>{camper.name}</Name>
           <Wrap2>
             <Price>{formattedPrice}</Price>
-            <Icon size={24} fill="white" stroke="var(--main-text-color)">
+            <Icon size={24} fill="white" stroke="var(--main-text-color)" cursor='pointer' >
               <use href={`${icons}#icon-Vector-1`}></use>
             </Icon>
           </Wrap2>
