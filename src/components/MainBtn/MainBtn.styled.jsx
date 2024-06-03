@@ -26,4 +26,9 @@ export const Btn = styled.button`
         border: none;
         cursor: pointer;
     }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 `;

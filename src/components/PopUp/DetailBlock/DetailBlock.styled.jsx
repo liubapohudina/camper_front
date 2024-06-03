@@ -14,6 +14,8 @@ export const HeadernpopUp = styled.h3`
   font-size: 20px;
   font-weight: 600;
   color: var(--main-text-color);
+  padding-bottom: 24px;
+  border-bottom: 1px solid #10182833;
   `;
 export const NavBtnpopUp = styled.button`
   font-size: 20px;
@@ -30,11 +32,11 @@ export const NavBtnpopUp = styled.button`
       &::after {
         content: '';
         position: absolute;
-        bottom: -24px; /* Відстань знизу */
+        bottom: -24px; 
         left: 0;
         width: 100%;
-        height: 5px; /* Висота псевдоелемента */
-        background-color: #e44848; /* Колір псевдоелемента */
+        height: 5px; 
+        background-color: #e44848; 
       }
     `}
 `;
