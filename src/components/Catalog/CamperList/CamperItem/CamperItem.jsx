@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CamperItemWrapper,
   Img,
@@ -17,9 +17,23 @@ import CategoriesItem from "./CategoriesItem";
 import icons from "../../../../assets/icons/symbol-defs.svg";
 import MainBtn from "../../../../components/MainBtn/MainBtn";
 import Modal from "../../../PopUp/PopUp";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../../../../redux/favorite/favorite-slice";
+import { selectFavorite } from "../../../../redux/favorite/favorite-selector";
 
-const CamperItem = ({ camper }) => {
+const CamperItem = ({ camper, ...rest}) => {
   const [showModal, setShowModal] = useState(false);
+  const [favoriteCamper, setFavoriteCamper] = useState(false);
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorite);
+  console.log(favorites)
+
+  useEffect(() => {
+    const isFavorite = favorites.some(item => item._id === camper._id);
+    if(isFavorite) {
+      setFavoriteCamper(true)
+    }
+  }, [camper._id, favorites])
 
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -34,17 +48,31 @@ const CamperItem = ({ camper }) => {
     setShowModal(false);
   };
 
+  const handleFavorite = (camper) => {
+    console.log(camper)
+    const isFavorite = favorites.some(item => item._id === camper._id);
+    if (isFavorite) {
+      dispatch(removeFavorite(camper));
+      setFavoriteCamper(false);
+    } else {
+      dispatch(addFavorite(camper));
+      setFavoriteCamper(true);
+    }
+  };
+
   return (
-    <CamperItemWrapper key={camper._id} id={camper._id}>
-      <Img src={camper.gallery[0]} alt={camper.name}></Img>
+    <CamperItemWrapper key={camper._id} id={camper._id} {...rest}>
+      <Img src={camper.gallery[0]} alt={camper.name} {...rest}></Img>
       <div>
         <Wrap1>
           <Name>{camper.name}</Name>
           <Wrap2>
             <Price>{formattedPrice}</Price>
-            <Icon size={24} fill="white" stroke="var(--main-text-color)" cursor='pointer' >
+            <button type="button" onClick={() => handleFavorite(camper)}>
+            <Icon size={24} fill={!favoriteCamper ? "white" : "#E44848"} stroke={!favoriteCamper ? "var(--main-text-color)" : "#E44848"} cursor='pointer' >
               <use href={`${icons}#icon-Vector-1`}></use>
             </Icon>
+            </button>
           </Wrap2>
         </Wrap1>
         <RewieBox>

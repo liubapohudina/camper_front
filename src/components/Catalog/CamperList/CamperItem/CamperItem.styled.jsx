@@ -9,11 +9,11 @@ export const CamperItemWrapper = styled.li`
   color: black;
   display: flex;
   gap: 24px;
-  max-width: 888px;
+  max-width: ${(props) => props.$favoriteStyleLi || "888px"};
 `;
 
 export const Img = styled.img`
-  width: 290px;
+  width: ${(props) => props.$favoriteStyleImg || "290px"};
   height: 310px;
   object-fit: cover;
   border-radius: 10px;
