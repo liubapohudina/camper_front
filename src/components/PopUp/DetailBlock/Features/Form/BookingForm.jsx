@@ -85,7 +85,7 @@ const BookingForm = () => {
           <TextArea placeholder="Comment" {...register("comment")} />
         </Label>
 
-        <MainBtn type="submit" text={'Book Now'} disabled={errors}>Book Now</MainBtn>
+        <MainBtn type="submit" text={'Send'} disabled={errors}>Book Now</MainBtn>
       </Form>
     </FormBox>
   );

@@ -3,6 +3,7 @@ import Features from "./Features/Features";
 import Reviews from "./Reviews/Reviews";
 import { DetailBox } from "./DetailBlock.styled";
 import FeaturesBlock from "./Features/FeaturesBlock/FeaturesBlick";
+import DetailReviews from "./Reviews/DetailReviews/DetailReviews";
 import PropTypes from 'prop-types';
 
 
@@ -25,7 +26,7 @@ const DetailBlock = ({categories}) => {
         onClick={() => toggleSection("reviews")}
       />
     </DetailBox>
-    {activeSection === "features" ? (<FeaturesBlock categories={categories}/>) : (<div>r block</div>)}
+    {activeSection === "features" ? (<FeaturesBlock categories={categories}/>) : (<DetailReviews categories={categories}/>)}
     </div>
   );
 };

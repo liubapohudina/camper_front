@@ -5,8 +5,6 @@ import { FeatureContent, BoxContent } from "./FeaturesBlock.styled";
 import BookingForm from "../Form/BookingForm";
 
 const FeaturesBlock = ({categories}) => {
-  console.log(categories)
- 
   return (
     <FeatureContent>
       <BoxContent>
