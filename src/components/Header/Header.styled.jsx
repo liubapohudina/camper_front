@@ -19,6 +19,10 @@ export const HeaderW = styled.header`
 padding-top: 30px;
 padding-bottom: 30px;
 ${container}
+${mobileScrennForElements`
+padding-top: 15px;
+padding-bottom: 15px;
+`};
 `;
 
 export const NavList = styled.nav`

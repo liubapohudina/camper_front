@@ -1,10 +1,11 @@
 import Catalogcontent from "../components/Catalog/CatalogContent";
+import { Section } from "../components/CustomComponents/Section.styled";
 
 const CatalogPage = () => {
 return (
-    <section>
+    <Section>
         <Catalogcontent/>
-    </section>
+    </Section>
 )
 }
 

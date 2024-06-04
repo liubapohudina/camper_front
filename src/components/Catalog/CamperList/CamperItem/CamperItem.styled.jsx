@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { mobileScrennForElements, tabletScreenForElements } from "../../../../medaiQuery";
+
 
 export const CamperItemWrapper = styled.li`
   border: 1px solid #ccc;
@@ -10,6 +12,16 @@ export const CamperItemWrapper = styled.li`
   display: flex;
   gap: 24px;
   max-width: ${(props) => props.$favoriteStyleLi || "888px"};
+  ${mobileScrennForElements`
+    max-width: 300px;
+    flex-direction: column;
+  `}
+  @media screen and (min-width: 500px) and (max-width: 767.98px) {
+    max-width: 400px;
+  }
+  ${tabletScreenForElements`
+  flex-direction: column;
+  `}
 `;
 
 export const Img = styled.img`
@@ -17,6 +29,12 @@ export const Img = styled.img`
   height: 310px;
   object-fit: cover;
   border-radius: 10px;
+  ${mobileScrennForElements`
+  width: 100%;
+  `}
+  ${tabletScreenForElements`
+  width: 100%;
+  `};
 `;
 
 export const Description = styled.p`

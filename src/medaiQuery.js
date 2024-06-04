@@ -13,17 +13,17 @@ const desktop = css`
 `;
 
 export const mobileScrenn = css`
-  @media (min-width: 375px) and (max-width: 767.98px) {
+  @media (min-width: 320px) and (max-width: 767.98px) {
     ${mobile}
   }
 `;
 export const mobileScrennForElements = styles => css`
-  @media (min-width: 375px) and (max-width: 767.98px) {
+  @media (min-width: 320px) and (max-width: 767.98px) {
     ${styles}
   }
 `;
 export const fromMobileScrennForElements = styles => css`
-  @media (min-width: 375px) {
+  @media (min-width: 320px) {
     ${styles}
   }
 `;
