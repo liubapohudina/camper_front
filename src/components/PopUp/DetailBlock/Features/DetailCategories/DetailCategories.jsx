@@ -19,6 +19,8 @@ const DetailCategories = ({categories}) => {
     { condition: categories.details.freezer, icon: 'icon-arcticons_freezer', text: "Freezer"},
     { condition: categories.details.hob, icon: 'icon-icon-park-outline_hand-painted-plate', text: `${categories.details.hob} hob`},
     { condition: categories.details.TV, icon: 'icon-Vertical-container-2', text: "TV"},
+    { condition: categories.details.gas, icon: 'icon-mdi_gas', text: "Gas"},
+    { condition: categories.details.water, icon: 'icon-ion_water-outline', text: "Water"},
   ];
 
 
@@ -27,7 +29,7 @@ const DetailCategories = ({categories}) => {
         {categoryMappingsModal.map(({ condition, icon, text }, index) => (
           condition ? (
             <CategoriesElement key={index}>
-              <Icon size={20} fill={icon === 'icon-Users' || icon === 'icon-ac'
+              <Icon size={20} fill={icon === 'icon-Users' || icon === 'icon-ac' || icon === 'icon-mdi_gas'
               || icon === 'icon-Vertical-container' || icon === 'icon-mingcute_toilet-paper-line' ? 'var(--main-text-color)' : 'aliceblue'} stroke="var(--main-text-color)">
                 <use href={`${icons}#${icon}`} />
               </Icon>

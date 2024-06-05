@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-// Стилі для обгортки пошуку
 export const BoxSearchVehincle = styled.div`
   margin-top: 24px;
-  flex-wrap: wrap;
+  margin-bottom: 32px;
+  flex-wrap: ${(props) => props.$nowrap};
   display: flex;
+  gap: 9px;
 `;
 
-// Стилі для кнопки
 export const FilterBtn = styled.svg`
   cursor: pointer;
   width: ${(props) => props.size}px;
@@ -16,7 +16,7 @@ export const FilterBtn = styled.svg`
   stroke: ${(props) => props.stroke};
 `;
 
-// Стилі для чекбокса
+
 export const FilterInput = styled.input`
   position: absolute;
   opacity: 0;
@@ -25,7 +25,6 @@ export const FilterInput = styled.input`
   cursor: pointer;
 `;
 
-// Додаткові стилі для кастомного чекбокса
 export const CustomCheckbox = styled.label`
   position: relative;
   display: inline-flex;

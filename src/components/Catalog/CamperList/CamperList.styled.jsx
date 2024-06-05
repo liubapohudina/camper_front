@@ -7,6 +7,7 @@ flex-direction: column;
 gap: 50px;
 align-items: center;
 justify-content: center;
+margin: 0 auto;
 ${mobileScrennForElements`
 gap: 20px;
 `}

@@ -1,19 +1,21 @@
 import { useForm } from 'react-hook-form';
 import { getFilteredCampers } from '../../../redux/camper/camper-operations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectcampers } from '../../../redux/camper/camper-selector';
 import { Input } from '../../PopUp/DetailBlock/Features/Form/BookingForm.styled';
 import { HeadernpopUp } from '../../PopUp/DetailBlock/DetailBlock.styled';
 import { Label, FilterForm, BoxSearchLocation, TextFilter } from './Filter.styled';
 import { Icon } from '../CamperList/CamperItem/CamperItem.styled';
 import icons from './../../../assets/icons/symbol-defs.svg';
 import FilterIcon from './FilterIcon/FilterIcon';
+import MainBtn from '../../MainBtn/MainBtn';
 
 const Filter = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
+  const { isError } = useSelector(selectcampers);
 
   const onSubmit = (data) => {
-    console.log(data)
     if (data.transmission === false) {
       data.transmission = null;
     }
@@ -23,6 +25,7 @@ const Filter = () => {
 
   return (
     <FilterForm onSubmit={handleSubmit(onSubmit)}>
+
       <BoxSearchLocation>
         <Label htmlFor="location">Location:</Label>
         <Input id="location" {...register('location')} $margintop='10px' $paddingleft='true' width='300px'/>
@@ -30,38 +33,19 @@ const Filter = () => {
                 <use href={`${icons}#icon-map-pin`}></use>
             </Icon>
       </BoxSearchLocation>
+      {isError && <TextFilter>{isError}</TextFilter>}
+
       <TextFilter>Filters</TextFilter>
+
       <HeadernpopUp>Vehicle equipment</HeadernpopUp>
 
-      <FilterIcon register={register}/>
+      <FilterIcon register={register} type='checkbox'/>
 
-      {/* <div>
-        <label>Equipment:</label>
-        <label>
-          <input type="checkbox" value="GPS" {...register('equipment')} /> GPS
-        </label>
-        <label>
-          <input type="checkbox" value="Kitchen" {...register('equipment')} /> Kitchen
-        </label>
-        <label>
-          <input type="checkbox" value="Shower" {...register('equipment')} /> Shower
-        </label>
-      </div> */}
+      <HeadernpopUp>Vehicle type</HeadernpopUp>
 
-      <div>
-        <label>Type:</label>
-        <label>
-          <input type="radio" value="alcove" {...register('form')} /> Alcove
-        </label>
-        <label>
-          <input type="radio" value="integrated" {...register('form')} /> Integrated
-        </label>
-        <label>
-          <input type="radio" value="semi-integrated" {...register('form')} /> Semi-integrated
-        </label>
-      </div>
+      <FilterIcon register={register} type='radio'/>
 
-      <button type="submit">Filter</button>
+      <MainBtn type='submit' text={'Search'}/>
     </FilterForm>
   );
 };

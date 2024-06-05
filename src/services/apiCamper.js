@@ -32,7 +32,6 @@ export const filtercampersFetch = async ({ location, form, details, transmission
                 return item.details[detail] > 0;
             });
         });
-        console.log(filteredData);
         return filteredData;
     }
 

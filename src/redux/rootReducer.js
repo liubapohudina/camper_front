@@ -4,7 +4,6 @@ import storage from 'redux-persist/lib/storage';
 
 import favoriteSlice from './favorite/favorite-slice';
 import camperSlice from './camper/camper-slice';
-// import filterReducer from './filter/filter-slice';
 
 const persistConfig = {
     key: 'root',

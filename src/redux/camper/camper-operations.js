@@ -9,7 +9,7 @@ export const getCampers = createAsyncThunk(
             const data = await campersFetch(currentPage);
             return data;
         } catch (error) {
-            return rejectWithValue(error.response.data.message);
+            return rejectWithValue(error.response.data);
         }
     }
 );
@@ -21,7 +21,7 @@ export const getFilteredCampers = createAsyncThunk(
            const data = await filtercampersFetch(params);
            return data;
         } catch(error) {
-            return rejectWithValue(error.response.data.message)
+            return rejectWithValue(error.response.data)
         }
     }
 )

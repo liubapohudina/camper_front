@@ -8,6 +8,7 @@ const Appbar = lazy(() => import('./components/Appbar/Appbar'))
 
 
 function App() {
+  
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>

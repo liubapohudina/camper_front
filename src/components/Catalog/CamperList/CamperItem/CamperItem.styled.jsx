@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { mobileScrennForElements, tabletScreenForElements } from "../../../../medaiQuery";
-
+import {
+  mobileScrennForElements,
+  tabletScreenForElements,
+} from "../../../../medaiQuery";
 
 export const CamperItemWrapper = styled.li`
   border: 1px solid #ccc;
@@ -93,11 +95,12 @@ export const RewieBox = styled.div`
 `;
 
 export const TextReview = styled.p`
+  text-align: center;
   color: ${(props) => props.color};
   font-size: 16px;
   font-weight: ${(props) => props.fontWeight};
   text-transform: capitalize;
-  border-bottom: ${(props) => props.$borderbottom || 'none'};
+  border-bottom: ${(props) => props.$borderbottom || "none"};
 `;
 export const LocationBox = styled.div`
   display: flex;

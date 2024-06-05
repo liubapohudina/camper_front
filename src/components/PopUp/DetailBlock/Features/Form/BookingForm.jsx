@@ -17,12 +17,17 @@ const BookingForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     control,
-  } = useForm();
+    trigger,
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  const userData = [];
 
   const onSubmit = (data) => {
-    console.log(data);
+    userData.push(data);
     window.location.reload();
   };
 
@@ -36,6 +41,7 @@ const BookingForm = () => {
             type="text"
             placeholder="Name"
             {...register("name", { required: true })}
+            onBlur={() => trigger("name")}
           />
           {errors.name && <span>Name is required</span>}
         </Label>
@@ -48,6 +54,7 @@ const BookingForm = () => {
               required: true,
               pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
             })}
+            onBlur={() => trigger("email")}
           />
           {errors.email && <span>Enter a valid email</span>}
         </Label>
@@ -63,10 +70,11 @@ const BookingForm = () => {
                 onChange={(date) => field.onChange(date)}
                 selected={field.value}
                 dateFormat="yyyy/MM/dd"
+                onBlur={() => trigger("bookingDate")}
               />
             )}
           />
-           <Icon
+          <Icon
             size={20}
             fill="white"
             stroke="var(--main-text-color)"
@@ -85,10 +93,11 @@ const BookingForm = () => {
           <TextArea placeholder="Comment" {...register("comment")} />
         </Label>
 
-        <MainBtn type="submit" text={'Send'} disabled={errors}>Book Now</MainBtn>
+        <MainBtn type="submit" text={'Send'} disabled={!isValid}>Book Now</MainBtn>
       </Form>
     </FormBox>
   );
 };
 
 export default BookingForm;
+
