@@ -67,10 +67,11 @@ export const Icon = styled.svg`
   fill: ${(props) => props.fill};
   stroke: ${(props) => props.stroke};
   margin-right: 4px;
-  right: ${(props) => props.right}px;
-  top: ${(props) => props.top}px;
-  position: ${(props) => props.absolute || "none"};
-  bottom: ${(props) => props.bottom}px;
+  right: ${(props) => props.$right}px;
+  left: ${(props) => props.$left}px;
+  top: ${(props) => props.$top}px;
+  position: ${(props) => props.$absolute || "none"};
+  bottom: ${(props) => props.$bottom}px;
 `;
 
 export const Wrap1 = styled.div`

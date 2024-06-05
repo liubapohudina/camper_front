@@ -10,20 +10,21 @@ const CategoriesItem = ({ categories }) => {
     { condition: categories.engine, icon: 'icon-Vertical-container', text: categories.engine },
     { condition: categories.details.kitchen, icon: 'icon-Horizontal-container', text:  "Kitchen"},
     { condition: categories.details.beds, icon: 'icon-Container-1', text: `${categories.adults} beds`},
-    { condition: categories.transmission, icon: 'icon-ac', text: "AC"},
+    { condition: categories.details.airConditioner, icon: 'icon-ac', text: "AC"},
   ];
 
   return (
     <CategoriesList>
       {categoryMappings.map(({ condition, icon, text }, index) => (
-        condition && (
+        condition ? (
           <CategoriesElement key={index}>
-            <Icon size={20} fill="aliceblue" stroke="var(--main-text-color)">
+            <Icon size={20} fill={icon === 'icon-Users' || icon === 'icon-ac'
+              || icon === 'icon-Vertical-container' || icon === 'icon-mingcute_toilet-paper-line' ? 'var(--main-text-color)' : 'aliceblue'}  stroke="var(--main-text-color)">
               <use href={`${icons}#${icon}`} />
             </Icon>
             <TextReview fontWeight="var(--medium)">{text}</TextReview>
           </CategoriesElement>
-        )
+        ) : null
       ))}
     </CategoriesList>
   );

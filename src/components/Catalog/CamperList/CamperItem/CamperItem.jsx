@@ -26,7 +26,6 @@ const CamperItem = ({ camper, ...rest}) => {
   const [favoriteCamper, setFavoriteCamper] = useState(false);
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorite);
-  console.log(favorites)
 
   useEffect(() => {
     const isFavorite = favorites.some(item => item._id === camper._id);
@@ -49,7 +48,6 @@ const CamperItem = ({ camper, ...rest}) => {
   };
 
   const handleFavorite = (camper) => {
-    console.log(camper)
     const isFavorite = favorites.some(item => item._id === camper._id);
     if (isFavorite) {
       dispatch(removeFavorite(camper));

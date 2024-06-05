@@ -11,6 +11,30 @@ export const campersFetch = async (page = 1) => {
             limit: 4,
         },
     });
-    console.log(data)
+    return data;
+};
+
+export const filtercampersFetch = async ({ location, form, details, transmission }) => {
+    if (transmission === false) {
+        transmission = null;
+    }
+    const { data } = await instance.get('/adverts', {
+        params: {
+            location,
+            form: form,
+            transmission: transmission
+        },
+    });
+
+    if (details.length > 0) {
+        const filteredData = data.filter((item) => {
+            return details.every((detail) => {
+                return item.details[detail] > 0;
+            });
+        });
+        console.log(filteredData);
+        return filteredData;
+    }
+
     return data;
 };

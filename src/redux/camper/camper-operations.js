@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import {campersFetch } from '../../services/apiCamper';
+import {campersFetch, filtercampersFetch } from '../../services/apiCamper';
 
 export const getCampers = createAsyncThunk(
     'campers/products',
@@ -13,3 +13,15 @@ export const getCampers = createAsyncThunk(
         }
     }
 );
+
+export const getFilteredCampers = createAsyncThunk(
+    'campers/filtered',
+    async(params, {rejectWithValue}) => {
+        try {
+           const data = await filtercampersFetch(params);
+           return data;
+        } catch(error) {
+            return rejectWithValue(error.response.data.message)
+        }
+    }
+)

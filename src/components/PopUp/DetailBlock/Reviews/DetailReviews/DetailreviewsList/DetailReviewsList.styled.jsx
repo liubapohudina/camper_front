@@ -7,7 +7,7 @@ flex-direction: column;
 gap: 16px;
 `;
 
-export const IconName = styled.p`
+export const IconName = styled.h3`
 color: var(--main-btn-bg-color);
 font-size: 24px;
 font-weight: var(--semi-bold);

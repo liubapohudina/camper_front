@@ -54,13 +54,14 @@ export const Label = styled.label`
 export const Input = styled.input`
   background: var(--input-bg-color);
   font-family: var(--font-family);
-  padding: 16px;
+  padding: ${(props) => props.$paddingleft ? '16px 16px 16px 44px' : '16px'};
   font-size: 16px;
   font-weight: var(--regular);
   border: 1px solid var(--input-bg-color);
   border-radius: 10px;
   color: var(--main-text-color);
-  width: 400px;
+  width: ${(props) => props.width || '400px' };
+  margin-top: ${(props) => props.$margintop || '0'};
   &:focus {
     border: none;
     outline: none;

@@ -71,10 +71,10 @@ const BookingForm = () => {
             fill="white"
             stroke="var(--main-text-color)"
             cursor="pointer"
-            right={32}
-            top={18} 
-            bottom={18}
-            absolute='absolute' 
+            $right={32}
+            $top={18} 
+            $bottom={18}
+            $absolute='absolute' 
           >
             <use href={`${icons}#icon-Button`}></use>
           </Icon>
