@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { mobileScrennForElements, container } from "../../medaiQuery";
+import { mobileScrennForElements, container, tabletScreenForElements } from "../../medaiQuery";
 
 export const NavMenu = styled(NavLink)`
   ${mobileScrennForElements`
@@ -41,5 +41,13 @@ export const Amount = styled.p`
   position: absolute;
   top: 30px;
   left: 520px;
+  ${mobileScrennForElements`
+  font-size: 18px;
+  top: 1px;
+  left: 330px;
+  `};
+  ${tabletScreenForElements`
+  left: 500px;
+  `};
 `;
 

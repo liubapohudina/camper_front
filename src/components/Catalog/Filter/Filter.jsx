@@ -16,6 +16,9 @@ const Filter = () => {
   const { isError } = useSelector(selectcampers);
 
   const onSubmit = (data) => {
+    if(data.location) {
+      data.location = data.location.trim();
+    }
     if (data.transmission === false) {
       data.transmission = null;
     }
