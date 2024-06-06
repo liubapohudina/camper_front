@@ -65,7 +65,7 @@ Contributions are welcome! Please follow these steps:
 
 If you have any questions or suggestions, please contact me:
 
-- Email: drogaltseva92@gmaol.com.com
+- Email: drogaltseva92@gmail.com
 - GitHub: [liubapohudina](https://github.com/liubapohudina)
 
 Builder
