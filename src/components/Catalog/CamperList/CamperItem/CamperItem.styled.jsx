@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   mobileScrennForElements,
   tabletScreenForElements,
-} from "../../../../medaiQuery";
+} from "../../../../mediaQuery";
 
 export const CamperItemWrapper = styled.li`
   border: 1px solid #ccc;

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { mobileScrenn400pxForElements, fromTabletScreenForElements } from "../../../../../mediaQuery.js";
 
 export const StyledDatePicker = styled(DatePicker)`
+  width: 95%;
   position: relative;
   background: var(--input-bg-color);
   font-family: var(--font-family);
@@ -12,7 +14,6 @@ export const StyledDatePicker = styled(DatePicker)`
   border: 1px solid var(--input-bg-color);
   border-radius: 10px;
   color: var(--main-text-color);
-  width: 400px;
   &:focus {
     border: none;
     outline: none;
@@ -22,8 +23,13 @@ export const StyledDatePicker = styled(DatePicker)`
 export const FormBox = styled.div`
   border-radius: 10px;
   padding: 24px;
-  min-width: 448px;
   border: 1px solid #10182833;
+  ${fromTabletScreenForElements`
+    min-width: 448px;
+    `};
+  ${mobileScrenn400pxForElements`
+    min-width: 300px;
+    `};
 `;
 
 export const Hform = styled.h3`
@@ -31,6 +37,10 @@ export const Hform = styled.h3`
   font-weight: 600;
   color: var(--main-text-color);
   padding-bottom: 8px;
+`;
+
+export const SpanError = styled.span`
+color: var(--main-btn-bg-color);
 `;
 
 export const TextForm = styled.p`
@@ -52,6 +62,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
+  width: ${(props) => props.width || '95%'};
   background: var(--input-bg-color);
   font-family: var(--font-family);
   padding: ${(props) => props.$paddingleft ? '16px 16px 16px 44px' : '16px'};
@@ -60,7 +71,6 @@ export const Input = styled.input`
   border: 1px solid var(--input-bg-color);
   border-radius: 10px;
   color: var(--main-text-color);
-  width: ${(props) => props.width || '400px' };
   margin-top: ${(props) => props.$margintop || '0'};
   &:focus {
     border: none;
@@ -69,6 +79,7 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
+  width: 95%;
   background: var(--input-bg-color);
   font-family: var(--font-family);
   padding: 16px 16px 76px 16px;
@@ -77,7 +88,6 @@ export const TextArea = styled.textarea`
   border: 1px solid var(--input-bg-color);
   border-radius: 10px;
   color: var(--main-text-color);
-  width: 400px;
   &:focus {
     border: none;
     outline: none;

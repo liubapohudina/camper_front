@@ -17,6 +17,14 @@ export const mobileScrenn = css`
     ${mobile}
   }
 `;
+
+export const mobileScrenn400pxForElements = styles => css`
+  @media (min-width: 320px) and (max-width: 399.98px) {
+    ${styles}
+  }
+`;
+
+
 export const mobileScrennForElements = styles => css`
   @media (min-width: 320px) and (max-width: 767.98px) {
     ${styles}
@@ -28,12 +36,12 @@ export const fromMobileScrennForElements = styles => css`
   }
 `;
 export const tabletScreen = css`
-  @media (min-width: 768px) and (max-width: 1439.98px) {
+  @media (min-width: 768px) and (max-width: 1199.98px) {
     ${tablet}
   }
 `;
 export const tabletScreenForElements = styles => css`
-  @media (min-width: 768px) and (max-width: 1439.98px) {
+  @media (min-width: 768px) and (max-width: 1199.98px) {
     ${styles}
   }
 `;
@@ -43,12 +51,12 @@ export const fromTabletScreenForElements = styles => css`
   }
 `;
 export const desktopScreen = css`
-  @media (min-width: 1440px) {
+  @media (min-width: 1200px) {
     ${desktop}
   }
 `;
 export const desktopScreenForElements = styles => css`
-  @media (min-width: 1440px){
+  @media (min-width: 1200px){
     ${styles}
   }
 `;

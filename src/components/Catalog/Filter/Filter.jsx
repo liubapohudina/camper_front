@@ -31,8 +31,8 @@ const Filter = () => {
 
       <BoxSearchLocation>
         <Label htmlFor="location">Location:</Label>
-        <Input id="location" {...register('location')} $margintop='10px' $paddingleft='true' width='300px'/>
-        <Icon size={18} fill="white" stroke="var(--main-text-color)" $absolute='absolute' $top='51' $left='19'>
+        <Input id="location" {...register('location')} $margintop='10px' $paddingleft='true' width='280px'/>
+        <Icon size={18} fill="white" stroke="var(--main-text-color)" $absolute='absolute' $top='51' $left='19' $right='0' $bottom='0'>
                 <use href={`${icons}#icon-map-pin`}></use>
             </Icon>
       </BoxSearchLocation>

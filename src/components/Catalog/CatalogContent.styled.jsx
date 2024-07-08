@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobileScrennForElements, tabletScreenForElements } from "../../medaiQuery";
+import { mobileScrennForElements, tabletScreenForElements } from "../../mediaQuery";
 
 export const CatalogBox = styled.div`
 padding-bottom: 100px;

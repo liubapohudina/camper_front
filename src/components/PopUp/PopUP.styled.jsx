@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fromMobileScrennForElements, mobileScrennForElements,fromTabletScreenForElements, desktopScreenForElements } from "../../mediaQuery.js";
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -18,7 +19,12 @@ export const ModalBackground = styled.div`
 export const ModalContent = styled.div`
   position: relative;
   background: white;
-  padding: 40px;
+  ${fromTabletScreenForElements`
+     padding: 40px;
+    `};
+  ${mobileScrennForElements`
+  padding: 16px;
+    `};
   border-radius: 20px;
   max-width: 982px;
   max-height: 600px;
@@ -53,6 +59,12 @@ export const CloseButton = styled.button`
 
 export const ListImg = styled.ul`
   display: flex;
+  ${fromMobileScrennForElements`
+    flex-direction: column;
+    `};
+   ${desktopScreenForElements`
+    flex-direction: row;
+    `};
   justify-content: space-between;
 `;
 

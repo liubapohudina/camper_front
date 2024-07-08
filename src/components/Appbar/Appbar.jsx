@@ -1,15 +1,22 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
+import HomeWrapper from '../HomeWrapper/HomeWrapper.jsx';
 
 const Appbar = () => {
+    const location = useLocation();
     return (
         <>
-            <Header/>
-
+        {location.pathname === '/' ? (
+          <HomeWrapper />
+        ) : (
+          <>
+            <Header />
             <main>
-                <Outlet />
+              <Outlet />
             </main>
-        </>
+          </>
+        )}
+      </>
     );
 };
 

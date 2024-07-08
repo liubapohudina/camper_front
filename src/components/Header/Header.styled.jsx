@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { mobileScrennForElements, container, tabletScreenForElements } from "../../medaiQuery";
+import { mobileScrennForElements, container, tabletScreenForElements } from "../../mediaQuery";
 
 export const NavMenu = styled(NavLink)`
   ${mobileScrennForElements`

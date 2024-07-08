@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobileScrennForElements } from "../../../medaiQuery";
+import { mobileScrennForElements } from "../../../mediaQuery";
 
 export const BoxList = styled.div`
 display: flex;

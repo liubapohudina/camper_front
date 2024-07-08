@@ -84,8 +84,6 @@ Modal.propTypes = {
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   details: PropTypes.object.isRequired,
-  // name: PropTypes.string.isRequired,
-  // description: PropTypes.string.isRequired
 };
 
 export default Modal;

@@ -8,6 +8,7 @@ import {
   Hform,
   TextForm,
   StyledDatePicker,
+  SpanError
 } from "./BookingForm.styled";
 import icons from "../../../../../assets/icons/symbol-defs.svg";
 import { Icon } from "../../../../Catalog/CamperList/CamperItem/CamperItem.styled";
@@ -43,7 +44,7 @@ const BookingForm = () => {
             {...register("name", { required: true })}
             onBlur={() => trigger("name")}
           />
-          {errors.name && <span>Name is required</span>}
+          {errors.name && <SpanError>Name is required</SpanError>}
         </Label>
 
         <Label>
@@ -56,7 +57,7 @@ const BookingForm = () => {
             })}
             onBlur={() => trigger("email")}
           />
-          {errors.email && <span>Enter a valid email</span>}
+          {errors.email && <SpanError>Enter a valid email</SpanError>}
         </Label>
 
         <Label>
@@ -66,6 +67,7 @@ const BookingForm = () => {
             rules={{ required: true }}
             render={({ field }) => (
               <StyledDatePicker
+              className="datapicker"
                 placeholderText="Booking date"
                 onChange={(date) => field.onChange(date)}
                 selected={field.value}
@@ -86,7 +88,7 @@ const BookingForm = () => {
           >
             <use href={`${icons}#icon-Button`}></use>
           </Icon>
-          {errors.bookingDate && <span>Booking date is required</span>}
+          {errors.bookingDate && <SpanError>Booking date is required</SpanError>}
         </Label>
 
         <Label>
